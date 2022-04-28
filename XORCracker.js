@@ -60,8 +60,7 @@ outputDiv.style.backgroundColor = "white";
 outputDiv.style.padding = ".5em";
 document.body.append(outputDiv);
  
- //b2.value = "decrypt";
- b2.addEventListener("click", decryptMSG);
+b2.addEventListener("click", decryptMSG);
  
  function decryptMSG(e){
      var k;
@@ -69,7 +68,8 @@ document.body.append(outputDiv);
         k = k2.value;
         decryptedMSGHolder.innerHTML = convertMSG(applyKey(k));
      }else{
-         //we want to generate all the possible messages for a given key
+         //we want to generate all the possible messages for a given key.  Write 
+
          var output = "Below is the output for all possible 8 bit keys<br><br>";
          for(var i = 0; i < 256;i++){
             k = makeKey(i);
@@ -80,7 +80,14 @@ document.body.append(outputDiv);
          
      }
  }
- 
+ /**
+  * Challenge 1
+  * To be completed by the students
+  * Complete the makeKey function.   The makeKey function
+  * creates an 8 digit key out of a base 10 number
+  * @param {} n 
+  * @returns 
+  */
  function makeKey(n){
     var bin = "";
     while(n > 0){
@@ -96,7 +103,13 @@ document.body.append(outputDiv);
     formattedKey += bin;
  return formattedKey;
  }
- 
+
+ /**
+  * Challenge 2
+  * To be completed by the students
+  * @param {} e 
+  * @returns 
+  */
  function applyKey(e){ 
     var key = e;
     var msg = "";
